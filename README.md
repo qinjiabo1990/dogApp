@@ -1,4 +1,4 @@
-# dogApp
+# Favourite Dog App
 
 This is a Favourite Dog App. Users can browser different kinds od dogs and add them into the favourite box.
 
