@@ -1,10 +1,10 @@
 /* eslint-disable import/no-anonymous-default-export */
-import { 
-	FETCH_DOGS_STATE, 
-	FETCH_DOGS_SUCCESS, 
-	FETCH_DOGS_FAIL, 
+import {
+	FETCH_DOGS_STATE,
+	FETCH_DOGS_SUCCESS,
+	FETCH_DOGS_FAIL,
 	SELECT_DOGS_BUTTON,
-	DogSelectorAction 
+	DogSelectorAction
 } from "./DogSelectorAction";
 
 interface dogSelectorState {
@@ -30,7 +30,7 @@ export default (state = defaultDogSelector, action: DogSelectorAction) => {
 		case FETCH_DOGS_FAIL:
 			return { ...state, error: action.payload, dogListLoading: false }
 		case SELECT_DOGS_BUTTON:
-			return {...state, index: action.payload}
+			return { ...state, index: action.payload }
 		default:
 			return state;
 	}

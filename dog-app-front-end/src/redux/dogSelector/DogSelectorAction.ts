@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {ThunkAction} from 'redux-thunk'
+import { ThunkAction } from 'redux-thunk'
 import { RootState } from '../store'
 
 export const FETCH_DOGS_STATE = 'fetch_dogs_state'
@@ -28,42 +28,42 @@ interface SelectDogsButton {
 
 export type DogSelectorAction = FetchDogsState | FetchDogsSuccess | FetchDogsFail | SelectDogsButton
 
-export const fetchDogsStateActionCreator = ():FetchDogsState => {
+export const fetchDogsStateActionCreator = (): FetchDogsState => {
 	return {
 		type: FETCH_DOGS_STATE
 	}
 }
 
-export const fetchDogsSuccessStateActionCreator = (data):FetchDogsSuccess => {
+export const fetchDogsSuccessStateActionCreator = (data): FetchDogsSuccess => {
 	return {
 		type: FETCH_DOGS_SUCCESS,
 		payload: data
 	}
 }
 
-export const fetchDogsFailActionCreator = (error):FetchDogsFail => {
+export const fetchDogsFailActionCreator = (error): FetchDogsFail => {
 	return {
 		type: FETCH_DOGS_FAIL,
 		payload: error
 	}
-} 
+}
 
-export const getDogsDataAction = ():ThunkAction<
-		void, 
-		RootState, 
-		unknown, 
-		DogSelectorAction
-	> => async (dispatch, getState) => {
+export const getDogsDataAction = (): ThunkAction<
+	void,
+	RootState,
+	unknown,
+	DogSelectorAction
+> => async (dispatch, getState) => {
 	dispatch(fetchDogsStateActionCreator())
 	try {
-		const {data} = await axios.get<any>('https://api.thedogapi.com/v1/breeds');
+		const { data } = await axios.get<any>('https://api.thedogapi.com/v1/breeds');
 		dispatch(fetchDogsSuccessStateActionCreator(data));
 	} catch (error) {
 		dispatch(fetchDogsFailActionCreator(error.message));
 	}
 }
 
-export const getNextDogAction = (index):SelectDogsButton => {
+export const getNextDogAction = (index): SelectDogsButton => {
 	return {
 		type: SELECT_DOGS_BUTTON,
 		payload: index

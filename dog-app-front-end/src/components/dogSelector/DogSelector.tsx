@@ -17,30 +17,19 @@ export const DogSelector: React.FC = () => {
 	useEffect(() => {
 		dispatch(getDogsDataAction());
 	}, [])
-	
+
 	const nextButtonHandler = () => {
-		if (index < 171) {
-			dispatch(getNextDogAction(index + 1));
-		} else {
-			window.alert('This is the last image')
-		}
+		index < 171 ? dispatch(getNextDogAction(index + 1)) : window.alert('This is the last image')
 	}
 
 	const preButtonHandler = () => {
-		if (index > 0) {
-			dispatch(getNextDogAction(index - 1))
-		} else {
-			window.alert('This is the first image')
-		}
+		index > 0 ? dispatch(getNextDogAction(index - 1)) : window.alert('This is the first image')
 	}
 
 	const favouriteButtonHandler = () => {
-		if (!favouriteList.find(data => data.id === dogs[index].image.id)) {
-			dispatch(postFavouriteDogAction(dogs[index].image.url, dogs[index].image.id));
-		}
-		else {
+		!favouriteList.find(data => data.id === dogs[index].image.id) ?
+			dispatch(postFavouriteDogAction(dogs[index].image.url, dogs[index].image.id)) :
 			window.alert('You have added it in your box')
-		}
 	}
 
 	if (error) {

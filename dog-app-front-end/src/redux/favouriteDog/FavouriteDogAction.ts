@@ -63,7 +63,7 @@ export const fetchFavouriteDogsAction = (): ThunkAction<
 	}
 }
 
-export const postFavouriteDogAction = (urlLink, dogId): ThunkAction<
+export const postFavouriteDogAction = (dogUrl, dogId): ThunkAction<
 	void,
 	RootState,
 	unknown,
@@ -71,7 +71,7 @@ export const postFavouriteDogAction = (urlLink, dogId): ThunkAction<
 > => async (dispatch, getState) => {
 	try {
 		await axios.post('http://localhost:8000/lists', {
-			url: urlLink,
+			url: dogUrl,
 			id: dogId
 		});
 		dispatch(fetchFavouriteDogsAction())
