@@ -3,7 +3,7 @@
 This is a Favourite Dog App. Users can browser different kinds od dogs and add them into the favourite box.
 
 ## Tech Stack:
-Frontend: React + TypeScript + Redux + ReduxThunk + Module CSS
+Frontend: React + TypeScript + Redux + ReduxThunk + Module CSS <br />
 Backend: NodeJs
 
 ## Project Guideline
