@@ -1,0 +1,86 @@
+.dogSelector {
+	box-shadow: 0 4px 6px rgb(0 0 0 / 30%);
+	height: 100%;
+}
+
+.dogSelectorCard {
+	margin: 10px 10px 30px;
+	text-align: center;
+}
+
+.dogLoading, .dogError {
+	width: 500px;
+	line-height: 300px;
+	height: 300px;
+	text-align: center;
+	font-size: 20px;
+}
+
+.dogImage {
+	width: 500px;
+	margin: 0 30px;
+}
+
+.dogSelectorPanel {
+	display: flex;
+  flex-direction: row;
+  align-items: center;
+	justify-content:space-around;
+	margin-top: 30px;
+}
+
+.dogButton {
+	width: 100px;
+	height: 30px;
+	display:inline-block;
+	margin:0 5px 5px 0;
+	border-radius:2em;
+	border: none;
+	box-sizing: border-box;
+	font-size:18px;
+	color:#FFFFFF;
+	background-color:#4eb5f1;
+	text-align:center;
+	transition: all 0.2s;
+}
+
+.dogButton:hover {
+	background-color:#4095c6;
+}
+
+@media only screen and (max-width: 1280px) {
+	.dogSelector {
+		margin: 0 auto 40px;
+	}
+	.dogSelectorCard{
+		width: auto;
+	}
+}
+
+@media only screen and (max-width: 760px) {
+	.dogSelectorCard {
+		margin: 0 20px 10px;
+	}
+	.dogImage {
+		width: 300px;
+		margin: 0;
+	}
+	.dogError{
+		width: 100%;
+		line-height: normal;
+	}
+	.dogLoading{
+		width: auto;
+		padding: 0 80px;
+	}
+}
+
+@media only screen and (max-width: 370px) {
+	.dogSelectorCard {
+		width: 250px;
+		margin: 0 10px 10px;
+	}
+	.dogImage {
+		width: 240px;
+	}
+}
