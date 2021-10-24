@@ -14,7 +14,7 @@ export const MyFavouriteDogs: React.FC = () => {
 
 	useEffect(() => {
 		dispatch(fetchFavouriteDogsAction());
-	}, [])
+	}, [dispatch])
 
 	if (error) {
 		return <div className={styles.favouriteError}>{error}</div>
@@ -30,7 +30,7 @@ export const MyFavouriteDogs: React.FC = () => {
 							<div className={styles.favouriteList}>
 								{favouriteList.map((data) =>
 									<div key={data.id}>
-										<img className={styles.favouriteImage} src={data.url} />
+										<img className={styles.favouriteImage} src={data.url} alt={data.id}/>
 									</div>
 								)}
 							</div>

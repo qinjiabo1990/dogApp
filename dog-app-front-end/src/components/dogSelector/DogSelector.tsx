@@ -16,7 +16,7 @@ export const DogSelector: React.FC = () => {
 
 	useEffect(() => {
 		dispatch(getDogsDataAction());
-	}, [])
+	}, [dispatch])
 
 	const nextButtonHandler = () => {
 		index < 171 ? dispatch(getNextDogAction(index + 1)) : window.alert('This is the last image')
